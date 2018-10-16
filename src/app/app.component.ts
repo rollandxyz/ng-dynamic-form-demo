@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WorkdefPayloadService } from './services/workdef-payload.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo';
+  workDefPayloadFields: any[];
+  constructor(service: WorkdefPayloadService) {
+    this.workDefPayloadFields = service.getPayloadFields();
+  }
 }

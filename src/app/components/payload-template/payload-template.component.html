@@ -1,0 +1,16 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+ 
+    <div *ngFor="let payloadField of payloadFields" class="form-row">
+      <app-payload-field [payloadField]="payloadField" [form]="form"></app-payload-field>
+    </div>
+ 
+    <div class="form-row">
+      <button type="submit" [disabled]="!form.valid">Save</button>
+    </div>
+  </form>
+ 
+  <div *ngIf="payLoad" class="form-row">
+    <strong>Saved the following values</strong><br>{{payLoad}}
+  </div>
+</div>
