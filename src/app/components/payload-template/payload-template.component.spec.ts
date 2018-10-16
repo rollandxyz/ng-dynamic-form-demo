@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { PayloadTemplateComponent } from './payload-template.component';
+import { PayloadFieldComponent } from '../payload-field/payload-field.component';
 
 describe('PayloadTemplateComponent', () => {
   let component: PayloadTemplateComponent;
@@ -8,7 +10,8 @@ describe('PayloadTemplateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PayloadTemplateComponent ]
+      declarations: [ PayloadTemplateComponent, PayloadFieldComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));
